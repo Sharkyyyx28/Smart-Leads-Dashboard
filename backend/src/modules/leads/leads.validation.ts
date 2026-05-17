@@ -33,8 +33,8 @@ export const queryLeadsSchema = z.object({
   query: z.object({
     page: z.string().optional(),
     limit: z.string().optional(),
-    status: z.enum(['New', 'Contacted', 'Qualified', 'Lost']).optional(),
-    source: z.enum(['Website', 'Instagram', 'Referral']).optional(),
+    status: z.enum(['New', 'Contacted', 'Qualified', 'Lost']).optional().or(z.literal('')),
+    source: z.enum(['Website', 'Instagram', 'Referral']).optional().or(z.literal('')),
     search: z.string().optional(),
     sort: z.enum(['Latest', 'Oldest']).optional(),
     export: z.enum(['true', 'false']).optional(),

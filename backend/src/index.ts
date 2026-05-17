@@ -19,7 +19,7 @@ connectDB();
 app.use(helmet());
 app.use(
   cors({
-    origin: config.FRONTEND_URL,
+    origin: true,
     credentials: true,
   })
 );
